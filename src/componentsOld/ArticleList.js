@@ -5,13 +5,6 @@ import CommentList from './CommentList'
 import oneOpen from '../HOC/oneOpen'
 
 class ArticleList extends Component {
-
-    static contextTypes = {
-        user: React.PropTypes.string,
-        localization: PropTypes.object,
-        thisLang: PropTypes.string
-    }
-
     render() {
         const { articles, isItemOpen, openItem } = this.props
         const articleItems = articles.map((article) =>
