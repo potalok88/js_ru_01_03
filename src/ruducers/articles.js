@@ -6,6 +6,7 @@ export default (articles = defaultArticles, action) => {
     console.log(action);
     switch (type) {
         case DELETE_ARTICLE:
+            //лучше просто id передавать, а не объект. И делать .filter()
             /* Вот это вообще не оптимально, но у меня был тяжёлый день */
             const indexDeletedArtilce = articles.lastIndexOf(deletedArticle);
             let articlesLength = articles.length;
