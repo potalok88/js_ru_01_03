@@ -15,7 +15,6 @@ class Root extends Component {
                 <div>
                     <Counter />
                     <Articles />
-                    <DevTools />
                 </div>
             </Provider>
         )

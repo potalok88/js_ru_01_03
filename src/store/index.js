@@ -1,18 +1,24 @@
 import { createStore, applyMiddleware, compose } from 'redux'
 import reducer from '../ruducers'
 import logger from '../middlewares/logger'
-import DevTools from '../containers/DevTools'
+//import DevTools from '../containers/DevTools'
 
 const enhancer = compose(
-    applyMiddleware(logger),
-    DevTools.instrument()
+    applyMiddleware(logger)
 )
 
 const store = createStore(reducer, {}, enhancer)
 
+
 if (module.hot) {
-    module.hot.accept('../ruducers', () =>
-        store.replaceReducer(require('../ruducers').default)
+
+    module.hot.accept('../ruducers', () =>{
+        console.log('---',store)
+        console.log(store.replaceReducer(require('../ruducers')));
+        return  store.replaceReducer(require('../ruducers').default)
+
+    }
+
     );
 }
 

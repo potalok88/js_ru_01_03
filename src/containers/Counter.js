@@ -23,6 +23,4 @@ class CounterContainer extends Component {
 export default connect((state) => {
     const { count } = state
     return { count }
-}, {
-    increment
-})(CounterContainer)
+}, {increment})(CounterContainer)
